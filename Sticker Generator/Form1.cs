@@ -62,10 +62,6 @@ namespace Sticker_Generator
             g.FillRectangle(new SolidBrush(panel2.BackColor), 0, 0, width, height);
             var bytes = new byte[0];
             label1.Text = CreateMD5(textBox1.Text, out bytes);
-            for (int i = 0; i < bytes.Length; i++)
-            {
-                bytes[i] = byte.MaxValue;
-            }
             BitArray bits = new BitArray(bytes);
             var sb = new StringBuilder(300);
             for (int i = 0; i < bits.Count; i++)
